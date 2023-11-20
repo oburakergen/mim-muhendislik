@@ -1,0 +1,15 @@
+@import "bootstrap/scss/bootstrap.scss";
+@import "core/functions.scss";
+@import "font.scss";
+@import "variables.scss";
+
+body {
+    @include font-mixin($color: $prussian-blue, $width: 16px, $font: $fontTT);
+    font-weight: 400;
+    line-height: 1.40rem;
+    background-color: $white;
+}
+
+section {
+  font-size: 1.125rem;
+}
