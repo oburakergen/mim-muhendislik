@@ -25,9 +25,16 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.(png|gif|jpg|jpeg|svg|xml)$/,
-        use: ['url-loader'],
-      },
+        test: /.(ttf|otf|eot|otf|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/',    // where the fonts will go
+            publicPath: './fonts/'       // override the default path
+          }
+        }]
+      }
     ],
   },
   output: {
@@ -50,7 +57,8 @@ module.exports = {
   plugins: [
     new webpack.ProvidePlugin({
       $: 'jquery',
-      jQuery: 'jquery'
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
@@ -67,8 +75,12 @@ module.exports = {
     new CopywebpackPlugin({
       patterns: [
         {
-          from: 'src/assets/**/*',
-          to: 'assets/[name][ext]',
+          from: 'src/assets/fonts/**/*',
+          to: 'assets/fonts/[name][ext]',
+        },
+        {
+          from: 'src/assets/image/**/*',
+          to: 'assets/image/[name][ext]',
         },
       ],
     }),

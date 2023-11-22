@@ -1,0 +1,29 @@
+header {
+  height: 80px;
+  background-color: $honolulu-blue;
+
+  nav.bg-body-mim {
+    padding: 16px 80px;
+    justify-content: space-between;
+    align-items: center;
+
+    ul.navbar-nav {
+      gap: 1.5rem;
+      li {
+        a.nav-link {
+          color: $white !important;
+          font-weight: 400 !important;
+          line-height: 1.42rem;
+          text-decoration: none;
+          transition: all 0.1s ease-in-out;
+          &.active {
+            font-weight: 600 !important;
+          }
+          &:hover {
+            font-weight: 600 !important;
+          }
+        }
+      }
+    }
+  }
+}

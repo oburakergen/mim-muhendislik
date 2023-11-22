@@ -1,7 +1,10 @@
 @import "bootstrap/scss/bootstrap.scss";
+@import "swiper/scss";
 @import "core/functions.scss";
 @import "font.scss";
 @import "variables.scss";
+@import "components/header.scss";
+@import "sections/slider.scss";
 
 body {
     @include font-mixin($color: $prussian-blue, $width: 16px, $font: $fontTT);
@@ -9,6 +12,27 @@ body {
     line-height: 1.40rem;
     background-color: $white;
 }
+
+.bg-body-mim {
+  @include font-mixin($color: $white, $width: 1.125rem, $font: $fontTT);
+  background-color: $honolulu-blue;
+}
+
+/* button start */
+.btn-maastrict {
+  @include font-mixin($color: $white, $width: 1rem, $font: $fontTT);
+  background-color: $prussian-blue;
+  color: $white;
+  font-weight: 400;
+  padding: 9px 26px;
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    background-color: $prussian-blue;
+    font-weight: 600;
+    color: $white;
+  }
+}
+/* button end */
 
 section {
   font-size: 1.125rem;
