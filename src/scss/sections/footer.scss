@@ -1,0 +1,41 @@
+footer {
+  overflow: hidden;
+  padding: 0.5rem 1.5rem;
+  background-color: $prussian-blue;
+  .footer-top {
+    padding: 3rem 0;
+    .footer-logo {
+      margin-bottom: 1.5rem;
+      img {
+        width: 100%;
+      }
+    }
+    .footer-menu {
+      ul {
+        li {
+          a {
+            color: $white;
+            font-weight: 400;
+            transition: all 0.1s ease-in-out;
+            &:hover {
+              color: $white;
+              text-decoration: underline $white;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer-bottom {
+    padding: 1.5rem 0;
+    .footer-bottom-left {
+      @include font-mixin($color: $white, $width: 1rem, $font: $fontTT);
+      font-weight: 400;
+    }
+    .footer-bottom-right {
+      @include font-mixin($color: $white, $width: 1rem, $font: $fontTT);
+      font-weight: 400;
+      text-align: right;
+    }
+  }
+}

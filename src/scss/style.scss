@@ -1,16 +1,35 @@
 @import "bootstrap/scss/bootstrap.scss";
 @import "swiper/scss";
+@import 'remixicon/fonts/remixicon.css';
 @import "core/functions.scss";
 @import "font.scss";
 @import "variables.scss";
 @import "components/header.scss";
-@import "sections/slider.scss";
+@import "sections/slider.scss", "sections/about.scss" , "sections/footer.scss";
 
 body {
     @include font-mixin($color: $prussian-blue, $width: 16px, $font: $fontTT);
     font-weight: 400;
     line-height: 1.40rem;
     background-color: $white;
+}
+
+a {
+  color: $white;
+  text-decoration: none;
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    text-decoration: none;
+  }
+  &:focus {
+    text-decoration: none;
+  }
+  &:active {
+    text-decoration: none;
+  }
+  &:visited {
+    text-decoration: none;
+  }
 }
 
 .bg-body-mim {
@@ -36,4 +55,48 @@ body {
 
 section {
   font-size: 1.125rem;
+}
+
+.btn-link {
+  font-weight: 600;
+  color: $prussian-blue;
+  transition: all 0.1s ease-in-out;
+  text-decoration: underline $prussian-blue;
+  &:hover {
+    color: $prussian-blue;
+    opacity: 0.8;
+  }
+}
+
+.border-title {
+  width: 80px;
+  height: 10px;
+  margin-right: 0.5rem;
+  display: inline-block;
+  background-color: $honolulu-blue;
+}
+
+h2.about-title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 2.8rem;
+  margin-bottom: 1.5rem;
+}
+.about-detail {
+  margin-bottom: 2.5rem;
+
+  p {
+    font-family: $fontTT;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+    color: $spanish-gray;
+  }
+}
+
+
+.swiper-slide img {
+  max-height: 500px !important;
+  object-fit: cover;
 }
