@@ -25,16 +25,16 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
-        test: /.(ttf|otf|eot|otf|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        test: /\.(woff(2)?)$/,
         use: [{
           loader: 'file-loader',
           options: {
             name: '[name].[ext]',
-            outputPath: 'fonts/',    // where the fonts will go
-            publicPath: './fonts/'       // override the default path
+            outputPath: 'fonts/',
+            publicPath: './fonts/'
           }
         }]
-      }
+      },
     ],
   },
   output: {
@@ -74,10 +74,6 @@ module.exports = {
     }),
     new CopywebpackPlugin({
       patterns: [
-        {
-          from: 'src/assets/fonts/**/*',
-          to: 'assets/fonts/[name][ext]',
-        },
         {
           from: 'src/assets/image/**/*',
           to: 'assets/image/[name][ext]',
