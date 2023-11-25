@@ -1,7 +1,36 @@
 footer {
   overflow: hidden;
-  padding: 0.5rem 1.5rem;
   background-color: $prussian-blue;
+  padding: 4rem 5rem;
+  margin-top: 3rem;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17.64px;
+  color: $white;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      opacity: 0.8;
+      padding-bottom: 0.5rem;
+    }
+  }
+
+  .addess-title {
+    opacity: 0.8;
+    padding-bottom: 0.5rem;
+  }
+
+  .footer-detail,
+  .address {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17.64px;
+    color: $white;
+  }
+
   .footer-top {
     padding: 3rem 0;
     .footer-logo {
@@ -38,4 +67,23 @@ footer {
       text-align: right;
     }
   }
+
+  .copy-right-div {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 150px);
+    .copy-right {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17.64px;
+    }
+  }
+}
+
+.bottom-footer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 22px 32px;
+  justify-content: center;
 }

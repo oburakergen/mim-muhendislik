@@ -37,6 +37,10 @@ a {
   background-color: $honolulu-blue;
 }
 
+.color-hono {
+  color: $honolulu-blue;
+}
+
 /* button start */
 .btn-maastrict {
   @include font-mixin($color: $white, $width: 1rem, $font: $fontTT);
@@ -76,7 +80,7 @@ section {
   background-color: $honolulu-blue;
 }
 
-h2.about-title {
+.about-title {
   font-size: 2.25rem;
   font-weight: 600;
   line-height: 2.8rem;
@@ -99,4 +103,29 @@ h2.about-title {
 .swiper-slide img {
   max-height: 500px !important;
   object-fit: cover;
+}
+
+
+.box-shadow {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.border-right {
+  border-right: 1px solid $spanish-gray;
+}
+
+.px-8 {
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
+
+.right-0 {
+  right: 0 !important;
+}
+
+.social-list {
+  position: relative;
+  display: flex;
+  font-size: 20px;
+  gap: 9px;
 }
