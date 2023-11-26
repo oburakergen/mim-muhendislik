@@ -1,0 +1,34 @@
+section.maps {
+  background-color: $prussian-blue;
+  overflow: hidden;
+  padding: 60px 0;
+  @include font-mixin($color: $spanish-gray, $width: 14px, $font: $fontTTBold);
+  h2.about-title {
+    @include font-mixin($color: $white, $width: 36px, $font: $fontTTBold);
+    line-height: 45.36px;
+    font-weight: 600;
+  }
+  .description {
+    @include font-mixin($color: $spanish-gray, $width: 18px, $font: $fontTT);
+    line-height: 22.68px;
+    font-weight: 400;
+  }
+
+  .map {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+  }
+
+  .label {
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 4px;
+    }
+  }
+
+  button {
+    @include font-mixin($color: $prussian-blue, $width: 18px, $font: $fontTT);
+  }
+}

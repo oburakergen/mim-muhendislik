@@ -1,0 +1,144 @@
+section.news {
+  overflow: hidden;
+  h2.about-title {
+    @include font-mixin($color: $prussian-blue, $width: 36px, $font: $fontTTBold);
+    line-height: 45.36px;
+    font-weight: 600;
+  }
+  .description {
+    @include font-mixin($color: $cadet-gray, $width: 18px, $font: $fontTT);
+    line-height: 22.68px;
+    font-weight: 400;
+  }
+
+  .slide-button {
+    @include font-mixin($color: $prussian-blue, $width: 36px, $font: $fontTT);
+  }
+
+  .news-swiper {
+    .post-thumbs {
+      position: relative;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+
+      a {
+        display: block;
+        img {
+          border-radius: 3px;
+          max-height: 330px !important;
+          max-width: 416px;
+        }
+      }
+    }
+
+    .post-entry {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 22.68px;
+      font-weight: 600;
+      text-align: start;
+
+      .post-meta {
+        @include font-mixin($color: $spanish-gray, $width: 18px, $font: $fontTT);
+        font-weight: 400;
+        margin-bottom: .5rem;
+      }
+      p {
+        @include font-mixin($color: $prussian-blue, $width: 18px, $font: $fontTT);
+        text-align: start;
+        margin-bottom: .5rem;
+      }
+
+      .link {
+        a {
+          @include font-mixin($color: $honolulu-blue, $width: 14px, $font: $fontTT);
+          line-height: 17.68px;
+          text-decoration: underline;
+        }
+        i {
+          @include font-mixin($color: $honolulu-blue, $width: 20px, $font: $fontTT);
+        }
+      }
+    }
+  }
+
+  .project-swiper {
+    .post-thumbs {
+      position: relative;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+
+      a {
+        display: block;
+
+        img {
+          border-radius: 3px;
+          max-height: 480px !important;
+          max-width: 632px;
+          height: 480px !important;
+          width: 632px;
+        }
+      }
+    }
+  }
+
+  .company-swiper {
+    .post-thumbs {
+      position: relative;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+
+      a {
+        display: block;
+
+        img {
+          border-radius: 3px;
+          max-height: 500px !important;
+          max-width: 416px;
+          height: 500px !important;
+          width: 416px;
+        }
+      }
+    }
+  }
+
+  .photo-caption-hover {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: auto;
+    text-align: start;
+    .caption-inner {
+      display: flex;
+      flex-direction: row;
+      background-color: $honolulu-blue;
+      justify-content: space-between;
+
+    }
+  }
+}
+
+section.bg-body-blue {
+  background-color: $prussian-blue;
+  h2.about-title {
+    @include font-mixin($color: $white, $width: 36px, $font: $fontTTBold);
+    line-height: 45.36px;
+    font-weight: 600;
+  }
+  .description {
+    @include font-mixin($color: $cadet-gray, $width: 18px, $font: $fontTT);
+    line-height: 22.68px;
+    font-weight: 400;
+  }
+
+  .slide-button {
+    @include font-mixin($color: $white, $width: 36px, $font: $fontTT);
+  }
+  .swiper-slide {
+    background-color: $prussian-blue !important;
+  }
+}

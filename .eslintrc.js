@@ -10,6 +10,7 @@ module.exports = {
   rules: {
     "import/no-extraneous-dependencies": "off",
     "strict": "off",
+    "no-new": "off"
   },
   globals: {
     window: true,

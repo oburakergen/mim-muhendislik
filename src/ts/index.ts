@@ -1,26 +1,26 @@
 import 'bootstrap';
 import Swiper from 'swiper';
-import {CountUp} from "countup.js";
+import { Navigation, Pagination } from 'swiper/modules';
+
+import { CountUp } from 'countup.js';
 
 $(document).ready(() => {
-  const countUp = new CountUp('about-proje', 120,
-    {
-      duration: 3,
-      separator: '.',
-      prefix: '+',
-    });
+  const countUp = new CountUp('about-proje', 120, {
+    duration: 3,
+    separator: '.',
+    prefix: '+',
+  });
   if (!countUp.error) {
     countUp.start();
   } else {
     console.error(countUp.error);
   }
 
-  const countUp2 = new CountUp('about-partner', 30,
-    {
-      duration: 3,
-      separator: '.',
-      prefix: '+',
-    });
+  const countUp2 = new CountUp('about-partner', 30, {
+    duration: 3,
+    separator: '.',
+    prefix: '+',
+  });
   if (!countUp2.error) {
     countUp2.start();
   } else {
@@ -38,37 +38,48 @@ $(document).ready(() => {
     console.error(countUp3.error);
   }
 
-  const swiper = new Swiper('.mySwiper', {
+  new Swiper('.full-slider', {
+    modules: [ Pagination],
     pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
+      el: ".swiper-pagination",
+      dynamicBullets: true,
       renderBullet (index, className) {
-        return `<span class="${  className  }">${  index + 1  }</span>`;
+        return `<span class="${  className  }">${  index+1  }</span>`;
       },
     },
   });
 
-  const swiper4 = new Swiper('.mySwiper4', {
-    slidesPerView: 4,
-    spaceBetween: 30,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-      renderBullet (index, className) {
-        return `<span class="${  className  }">${  index + 1  }</span>`;
-      },
+  new Swiper('.company-swiper', {
+    modules: [Navigation, Pagination],
+    slidesPerView: 3,
+    watchOverflow: true,
+    spaceBetween: 10,
+    width: 1300,
+    navigation: {
+      prevEl: '.slidePrev-btn',
+      nextEl: '.slideNext-btn',
     },
   });
 
-  const swiper3 = new Swiper('.mySwiper3', {
+  new Swiper('.project-swiper', {
+    modules: [Navigation, Pagination],
+    slidesPerView: 2,
+    watchOverflow: true,
+    spaceBetween: 10,
+    width: 1300,
+    navigation: {
+      prevEl: '.slidePrev-btn',
+      nextEl: '.slideNext-btn',
+    },
+  });
+
+  new Swiper('.news-swiper', {
+    modules: [Navigation, Pagination],
     slidesPerView: 3,
     spaceBetween: 30,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-      renderBullet (index, className) {
-        return `<span class="${  className  }">${  index + 1  }</span>`;
-      },
+    navigation: {
+      prevEl: '.slidePrev-btn',
+      nextEl: '.slideNext-btn',
     },
   });
 });

@@ -1,11 +1,11 @@
 @import "bootstrap/scss/bootstrap.scss";
 @import "swiper/scss";
 @import 'remixicon/fonts/remixicon.css';
-@import "core/functions.scss";
-@import "font.scss";
-@import "variables.scss";
-@import "components/header.scss";
-@import "sections/slider.scss", "sections/about.scss" , "sections/footer.scss";
+@import "core/functions";
+@import "font";
+@import "variables";
+@import "components/header", "components/footer";
+@import "sections/slider", "sections/about" , "sections/news", "sections/maps";
 
 body {
     @include font-mixin($color: $prussian-blue, $width: 16px, $font: $fontTT);
@@ -17,7 +17,8 @@ body {
 a {
   color: $white;
   text-decoration: none;
-  transition: all 0.1s ease-in-out;
+  outline: 0;
+  transition: all 0.5s;
   &:hover {
     text-decoration: none;
   }
@@ -30,6 +31,16 @@ a {
   &:visited {
     text-decoration: none;
   }
+}
+
+img {
+  outline: 0;
+  border: 0 none;
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+  -ms-border-radius: 6px;
+  border-radius: 6px;
 }
 
 .bg-body-mim {
@@ -58,8 +69,15 @@ a {
 /* button end */
 
 section {
-  font-size: 1.125rem;
+  @include font-mixin($color: $prussian-blue, $width: 1rem, $font: $fontTT);
+  font-weight: 400;
 }
+
+.section-pad {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
 
 .btn-link {
   font-weight: 600;
@@ -107,7 +125,7 @@ section {
 
 
 .box-shadow {
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
 }
 
 .border-right {
@@ -128,4 +146,70 @@ section {
   display: flex;
   font-size: 20px;
   gap: 9px;
+}
+
+.shine {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    background: linear-gradient(
+        to right,
+        fade_out(#fff, 1) 0%,
+        fade_out(#fff, 0.7) 100%
+    );
+    content: "";
+    display: block;
+    height: 100%;
+    left: -75%;
+    position: absolute;
+    top: 0;
+    transform: skewX(-25deg);
+    width: 50%;
+    z-index: 2;
+  }
+
+  &:hover,
+  &:focus {
+    &::before {
+      animation: shine 0.85s;
+    }
+  }
+
+  @keyframes shine {
+    100% {
+      left: 125%;
+    }
+  }
+}
+
+.flex-end {
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.photo-caption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: #fff;
+  padding: 20px;
+  width: 100%;
+  transition: opacity .3s;
+  -ms-border-radius: inherit;
+  border-radius: inherit;
+}
+
+.btn-hallo {
+  @include font-mixin($color: $white, $width: 1rem, $font: $fontTT);
+  background-color: $honolulu-blue;
+  color: $white;
+  font-weight: 400;
+  padding: 9px 26px;
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    background-color: $honolulu-blue;
+    font-weight: 600;
+    color: $white;
+  }
 }
